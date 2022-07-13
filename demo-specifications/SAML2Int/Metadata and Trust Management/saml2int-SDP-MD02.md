@@ -14,19 +14,31 @@ _In most cases, this requirement implies that a key communicated via metadata wi
 | Term | Defintion |
 | ------- | ---------------------------------------------- |
 | Subject | The SAML entity undergoing metadata validation. The entity may be an IdP or an SP. |
-| | |
+| Metadata Registry | An authorizative source of entity metadata used for InCommon Federation readiness |
 
 
-## Preconditions
+## Prerequisite
 
-1. The Subject has successfully retrieved testing entity metadata from the (test) InCommon metadata registry. (todo: insert reference to the download test)
+1. An authorizative source of entity metadata (ie Metadata Registry) used for InCommon Federation readiness exists.
+
+2. 6 test enttiy metadata records exists in the Metadata Registry:
+  * An IdP entity metadata with a correctly signed signature.
+  * An IdP entity metadata with an incorrectly signed signature.
+  * An IdP entity metadata without a signature. 
+  * An SP entity metadata with a correctly signed signature.
+  * An SP entity metadata with an incorrectly signed signature.
+  * An SP entity metadata without a signature. 
+
+3. The Subject has successfully retrieved the appropriate testing entity metadata from the Metadata Registry. (todo: insert reference to the download test)
+
 2. The Subject has sussessfully retrieved the metadata signing certificate from its published location. (todo: provide instruction to signing certificate loation)
 
-## Test A: A. Verifying signature: signature is correct.
+## Tests
+### Test A: Verifying signature: signature is correct.
 
 todo: what does the entity do to validate signature?
 
-### Test A Evaluation Criteria 
+#### Test A Evaluation Criteria 
 
 This is a pass/fail evaluation. 
 
@@ -36,11 +48,11 @@ The Subject **passes** Test A if:
 
 The Subject **fails** Test A otherwise.
 
-## Test B. Verifying signature: signature is incorrect or missing.
+### Test B. Verifying signature: signature is incorrect or missing.
 
 todo: what does the entity do to validate signature?
 
-### Test B Evaluation Criteria 
+#### Test B Evaluation Criteria 
 
 This is a pass/fail test. 
 
@@ -52,7 +64,7 @@ The Subject passes if:
 
 ## Acceptance
 
-The Subject **passes** this test if it passes both Test A and B. Otherwise, it **fails** this test.
+The Subject **passes** this test if it passes both Test A and Test B. Otherwise, it **fails** this test.
 
 
 ## Postcondition
