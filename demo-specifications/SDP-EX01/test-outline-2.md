@@ -1,18 +1,23 @@
-# SDP-EX01
+# <todo: insert test title; title needs to be unique, preferrably a unique identifier + short description >
+
+## Statement
+
+<todo: insert normative specification statement to be tested in this test>
 
 _Put [deployment statement](https://kantarainitiative.github.io/SAMLprofiles/saml2int.html) here; see [Deployment statements to test csv file](../../deployment-statements-to-test.csv)_ Example deployments must display the same organization name on the website's "Example" page to authenticated users as is in the metadata. (Note artificial example where we pretend both IdPs and SPs have a page that shows the respective SPs or IdPs involved in the authN flow. Purely artificial example.)
 
-## Summary of test
+## Testing Objectives
 
-Using the test subject and a known locale, authenticate, and then visit the test subject's Example page. 
+<todo: list the objectives of this test.>
 
-_Indicate the test parties in the table and how differences in configuration affect the test configuration_
+## Definitions & Notes
 
-|  | subject | multilateral  | bilateral |
-|---:|:---:|---|---|
-| IdP | X | X | X |
-| SP | X | X | X |
-| registrant | _1_ |  |  |
+<todo: define or clarify key terms or topics used in this test case>
+
+| Term | Defintion |
+| ------- | ---------------------------------------------- |
+| Subject | The SAML entity undergoing metadata validation. The entity may be an IdP or an SP. |
+| Metadata Registry | An authorizative source of entity metadata used for InCommon Federation readiness |
 
 ### Comments
 
@@ -28,35 +33,27 @@ _List any resources that may be helpful in designing and understanding the test.
 2. https://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-metadata-ui/v1.0/os/sstc-saml-metadata-ui-v1.0-os.html#__RefHeading__10385_1021935550
 3. https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf for type="md:localizedNameType"/
 
-## IdP test
+## Prerequisite
 
-### Configuration requested from test subject
+<todo: specify any pre-test setup or conditions that need to be in place before test begins.>
 
-_What information is needed from or about the test subject to configure testing scripts?_ 
+Using the test subject and a known locale, authenticate, and then visit the test subject's Example page. 
 
-1. MUST have credentials for a valid test user (no special requirements to claims)
-2. MUST have URL for IdP's "Example" page
+_Indicate the test parties in the table and how differences in configuration affect the test configuration_
 
-If no "Example" page can be given, all SDP-EX01 tests score a Fail in calculating the results, no testing occurs.
+|  | subject | multilateral  | bilateral |
+|---:|:---:|---|---|
+| IdP | X | X | X |
+| SP | X | X | X |
+| registrant | _1_ |  |  |
 
-### Testing SP metadata configuration
 
-_What metadata is needed test targets for the test?_ 
 
-1. MUST have a SP01 with mdui:DisplayName entries, all over 30 characters long, for multiple locales including a common locale and one very esoteric locale. All names should have a distinct and  uncommon combination of characters for the first ten characters.
-2. COULD have a SP02 with single mdui:DisplayName, over 30 characters long, for a locale also present in the first SP, where the first ten characters are distinct from other mdui:DisplayName and uncommon. This is the minimum complication test configuration. 
-3. COULD have a SP03 with a malformed mdui:DisplayName missing a locale, where the first ten characters are distinct from other mdui:DisplayName and uncommon. Keeping this separate from SP01 ensures that the missing locale is not confused with an error reading multiple entries.
-4. COULD have a SP04 SP with a 256 character length mdui:DisplayName in the common locale. See [SDP-G02](https://kantarainitiative.github.io/SAMLprofiles/saml2int.html#_general)  Keeping this separate from SP01 ensures that the long value is not confused with an error reading multiple entries.
+## Tests
 
-### Testing SP configuration
+<todo: layout specific testing steps and evaluation criteria.>
 
-_What features are needed for the SP?_ 
 
-The minimum needed from the SP is a url that triggers the authentication flow to the IdP being tested and an ACS to complete the authentication.
-
-### Test client configuration
-
-1. MUST be able to change the locale of the test client for each authentication loop.
 
 ### Test steps 
 
