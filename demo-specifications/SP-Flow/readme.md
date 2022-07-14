@@ -19,3 +19,7 @@ There are other SP side flows important to an SP's ability to interoperate with 
 * Handling Single Logout 
 * User attribute, including identifier handling
 * SP metadata validation: SP has properly formatted and published SAML metadata in federation metadata registry
+
+## References
+
+* [SAML Test Harness Repository from Roland](https://github.com/rhoerbe/sthrep2)
